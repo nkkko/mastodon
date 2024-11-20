@@ -3247,17 +3247,15 @@ $ui-header-logo-wordmark-width: 99px;
   }
 }
 
+.onboarding {
+  padding: 20px;
+}
+
 .onboarding__footer {
-  margin-top: 30px;
+  padding: 20px;
   color: $dark-text-color;
   text-align: center;
   font-size: 14px;
-
-  .link-button {
-    display: inline-block;
-    color: inherit;
-    font-size: inherit;
-  }
 }
 
 .onboarding__link {
@@ -3266,7 +3264,8 @@ $ui-header-logo-wordmark-width: 99px;
   justify-content: space-between;
   gap: 10px;
   color: $highlight-text-color;
-  background: lighten($ui-base-color, 4%);
+  background: var(--surface-variant-background-color);
+  border: 1px solid var(--background-border-color);
   border-radius: 8px;
   padding: 10px 15px;
   box-sizing: border-box;
@@ -3282,7 +3281,7 @@ $ui-header-logo-wordmark-width: 99px;
   &:hover,
   &:focus,
   &:active {
-    background: lighten($ui-base-color, 8%);
+    background: var(--surface-variant-active-background-color);
   }
 }
 
@@ -3312,7 +3311,7 @@ $ui-header-logo-wordmark-width: 99px;
   margin-bottom: 30px;
 
   & > * {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 
     &:last-child {
       margin-bottom: 0;
@@ -3324,8 +3323,8 @@ $ui-header-logo-wordmark-width: 99px;
   margin-bottom: 30px;
 
   &__item {
-    background: lighten($ui-base-color, 4%);
-    border: 0;
+    background: var(--surface-variant-background-color);
+    border: 1px solid var(--background-border-color);
     border-radius: 8px;
     display: flex;
     width: 100%;
@@ -3334,14 +3333,14 @@ $ui-header-logo-wordmark-width: 99px;
     gap: 10px;
     padding: 10px;
     padding-inline-end: 15px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     text-decoration: none;
     text-align: start;
 
     &:hover,
     &:focus,
     &:active {
-      background: lighten($ui-base-color, 8%);
+      background: var(--surface-variant-active-background-color);
     }
 
     &__icon {
@@ -3412,9 +3411,9 @@ $ui-header-logo-wordmark-width: 99px;
 }
 
 .follow-recommendations {
-  background: darken($ui-base-color, 4%);
+  background: var(--surface-background-color);
+  border: 1px solid var(--background-border-color);
   border-radius: 8px;
-  margin-bottom: 30px;
 
   .account:last-child {
     border-bottom: 0;
@@ -3490,9 +3489,10 @@ $ui-header-logo-wordmark-width: 99px;
 .onboarding__profile {
   position: relative;
   margin-bottom: 40px + 20px;
+  margin-top: -20px;
 
   .app-form__avatar-input {
-    border: 2px solid $ui-base-color;
+    border: 2px solid var(--background-color);
     position: absolute;
     inset-inline-start: -2px;
     bottom: -40px;
@@ -11149,4 +11149,37 @@ noscript {
       color: $secondary-text-color;
     }
   }
+}
+
+.column-search-header {
+  display: flex;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid var(--background-border-color);
+
+  .column-header__back-button.compact {
+    flex: 0 0 auto;
+    color: $primary-text-color;
+  }
+
+  input {
+    background: transparent;
+    border: 0;
+    color: $primary-text-color;
+    font-size: 16px;
+    display: block;
+    flex: 1 1 auto;
+
+    &::placeholder {
+      color: $dark-text-color;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.column-footer {
+  padding: 16px;
 }

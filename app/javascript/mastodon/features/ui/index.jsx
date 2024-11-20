@@ -64,8 +64,9 @@ import {
   PinnedStatuses,
   Lists,
   Directory,
+  OnboardingProfile,
+  OnboardingFollows,
   Explore,
-  Onboarding,
   About,
   PrivacyPolicy,
 } from './util/async-components';
@@ -214,7 +215,8 @@ class SwitchingColumnsArea extends PureComponent {
             <WrappedRoute path='/bookmarks' component={BookmarkedStatuses} content={children} />
             <WrappedRoute path='/pinned' component={PinnedStatuses} content={children} />
 
-            <WrappedRoute path='/start' component={Onboarding} content={children} />
+            <WrappedRoute path={['/start', '/start/profile']} exact component={OnboardingProfile} content={children} />
+            <WrappedRoute path='/start/follows' component={OnboardingFollows} content={children} />
             <WrappedRoute path='/directory' component={Directory} content={children} />
             <WrappedRoute path={['/explore', '/search']} component={Explore} content={children} />
             <WrappedRoute path={['/publish', '/statuses/new']} component={Compose} content={children} />
